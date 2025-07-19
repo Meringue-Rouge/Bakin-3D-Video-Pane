@@ -1,7 +1,37 @@
 # Bakin-3D-Video-Pane
-Import a video file and convert it into an event and image atlases to be used as a video that can be placed in 3D space in RPG Developer Bakin.
+ビデオファイルをインポートし、RPG Developer Bakinのイベントに変換します。 3Dビデオ・エンティティとして使用できます。
+Imports a video file and converts it into an event in RPG Developer Bakin. It can be used as a 3D video entity.
 
-## Usage
+> [!CAUTION]
+> これはBakinで動画ファイルを再生するのではなく、一連の画像を再生します。
+> 長い動画、高フレームレート、高解像度は、Bakinでメモリを大量に消費します。
+> 160x90の解像度で15fpsの9分のビデオは、約4ギガバイトのメモリを消費し、深刻なラグを引き起こします。 短い動画なら問題なく動作しますが、一度にあまり多くの異なる動画を読み込まない方がいいでしょう。
+> 
+> This doesn't play a video file in Bakin, but rather, plays a series of images.
+> Long videos, high framerates or high resolution, will use a load of memory in Bakin.
+> A 9 minute video at 160x90 resolution at 15 fps takes about 4 gigabytes of ram and causes severe lag. For short videos it works fine, but it's best to not have too many different ones loaded at once.
+
+## 使用方法
+- ZIPを解凍し、リリースページからEXEファイルを実行してください。
+- 動画ファイルを選択します。
+- フレームレートを決める：フレームレートを滑らかにすると、動画によってはスプライトの量が大幅に増えるので、長い動画は避け、フレームレートを上げすぎないようにします。
+- 画面サイズを決める：小さければ小さいほど解像度は下がりますが、パフォーマンスやファイルサイズは良くなります。 大きくすると、より多くのアニメーションを作成する必要があるので、注意してください。
+- エクスポート：RPG Developer BakinイベントTXTを含む必要なファイルをすべて作成します。
+- frame_interval.txtファイルを開き、フレーム間隔の値をコピーします。
+  - 小数がある場合は、完全に同期した動画にならず、Bakinがフィールドで小数を受け付けないため、理想的ではありません。
+- RPG Developer Bakinで、2Dスプライトをドラッグ＆ドロップする要領で、part001（first_frameではない）を3Dワールドにドラッグ＆ドロップして素早くインポートします。
+- 画像のサイズをエクスポートした画像サイズに設定します。
+- 表示時間をframe_interval.txtのフレーム間隔の値に設定します。
+- アニメーションの再生ループをloopかnoneに設定します。
+- OKを押してインポートします。
+- オブジェクトがマップに表示されたら、それをイベントにします。
+- eveht txtファイルをインポートします。
+- 空のイベントシートを削除します。
+- イベントのモデルを、新しく追加したビデオの2D Castに設定します。 first_frameから始まるのが理想的です。
+- 最後に、オーディオを追加したい場合は、エクスポートしたオーディオファイルをインポートし、サウンドエフェクト（SE）として設定し、イベントの一番最初に再生します。
+
+
+## Usage (English)
 - Extract the ZIP and run the EXE file from the releases page.
 - Select a video file.
 - Define the frame rate: smoother frame rates increase the amount of sprites significantly, depending on video, so avoid long videos and don't go overboard on the frame rate.
@@ -21,5 +51,5 @@ Import a video file and convert it into an event and image atlases to be used as
 - Finally, if you want to add the audio back; import the audio file that it exported, set it as a Sound Effect (SE), and then play it at the very start of the event.
 
 ## Credits
-- Siluman for the idea of getting 3D videos working.
+- Siluman for the idea of making 3D videos working.
 - Grok for the coding AI.
