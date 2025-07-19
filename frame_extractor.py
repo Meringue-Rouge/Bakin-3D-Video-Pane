@@ -324,8 +324,8 @@ class FrameExtractorApp:
             f.write(f"Final segment duration: {final_segment_duration:.2f} seconds (last atlas)\n")
 
         # Build FFmpeg command for audio extraction
-        audio_output = os.path.join(output_dir, f"{video_name}_audio.mp3")
-        audio_command = [self.ffmpeg_path, "-i", video_path, "-vn", "-acodec", "mp3", audio_output]
+        audio_output = os.path.join(output_dir, f"{video_name}_audio.wav")
+        audio_command = [self.ffmpeg_path, "-i", video_path, "-vn", "-acodec", "pcm_s16le", audio_output]
 
         try:
             # Extract audio
