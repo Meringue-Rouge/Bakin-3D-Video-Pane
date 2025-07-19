@@ -2,14 +2,17 @@
 ビデオファイルをインポートし、RPG Developer Bakinのイベントに変換します。 3Dビデオ・エンティティとして使用できます。
 Imports a video file and converts it into an event in RPG Developer Bakin. It can be used as a 3D video entity.
 
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/f807f3d5-dd10-4e13-95ee-277e52c1ec15" />
+
+
 > [!CAUTION]
 > これはBakinで動画ファイルを再生するのではなく、一連の画像を再生します。
 > 長い動画、高フレームレート、高解像度は、Bakinでメモリを大量に消費します。
-> 160x90の解像度で15fpsの9分のビデオは、約4ギガバイトのメモリを消費し、深刻なラグを引き起こします。 短い動画なら問題なく動作しますが、一度にあまり多くの異なる動画を読み込まない方がいいでしょう。
+> 160x90の解像度で9分のビデオを15fpsで撮影すると、ひどいラグが発生する。 短い動画であれば問題なく動作しますが、一度に多くの異なる動画を読み込まない方がいいでしょう。
 > 
 > This doesn't play a video file in Bakin, but rather, plays a series of images.
 > Long videos, high framerates or high resolution, will use a load of memory in Bakin.
-> A 9 minute video at 160x90 resolution at 15 fps takes about 4 gigabytes of ram and causes severe lag. For short videos it works fine, but it's best to not have too many different ones loaded at once.
+> A 9 minute video at 160x90 resolution at 15 fps takes causes severe lag. For short videos it works fine, but it's best to not have too many different ones loaded at once.
 
 ## 使用方法
 - ZIPを解凍し、リリースページからEXEファイルを実行してください。
